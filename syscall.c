@@ -137,22 +137,11 @@ static int (*syscalls[])(void) = {
 [SYS_link]    sys_link,
 [SYS_mkdir]   sys_mkdir,
 [SYS_close]   sys_close,
-
-// set environment variable PATH
 [SYS_set_global_path]   sys_set_global_path,
-
-// get history command
 [SYS_history]           sys_history,
-
-// signal
 [SYS_signal]            sys_signal,
-
-// set priority
 [SYS_set_prio]          sys_set_prio,
-
-// yield
 [SYS_sys_yield]         sys_yield,
-
 [SYS_wait2]         sys_wait2,
 };
 

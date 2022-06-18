@@ -558,8 +558,8 @@ scheduler(void)
 
     counter ++;
     
-    // sheduler only works on counter % QUANTA == 0
-    if(counter % QUANTA == 0){
+    // sheduler only works on counter % INTERV == 0
+    if(counter % INTERV == 0){
       // choose from the priority queue 3
       p = pqueue_peek(&queue3);
 
@@ -802,7 +802,6 @@ procdump(void)
   }
 }
 
-// set priority
 int sys_set_prio(void){
   int priority;
 

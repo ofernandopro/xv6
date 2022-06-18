@@ -2,7 +2,7 @@
 #include "stat.h"
 #include "user.h"
 
-int sleep_time = 0;
+int stime = 0;
 int ready_time = 0;
 int turnaround_time = 0;
 
@@ -64,18 +64,18 @@ main(int argc, char *argv[])
   
   wait2(&wait_time, &run_time, &io_time);
 
-  sleep_time += io_time;
+  stime += io_time;
   ready_time += wait_time;
   turnaround_time = turnaround_time + wait_time + run_time + io_time;
 
   switch (type_flag) {
   case 0:
-    sleep_time = sleep_time / pro_num;
+    stime = stime / pro_num;
     ready_time = ready_time / pro_num;
     turnaround_time = turnaround_time / pro_num;
     printf(1, "This is the parent process \n");
     printf(1, "The wait time is %d, the run time is %d, the io time is %d\n", wait_time, run_time, io_time);
-    printf(1, "The average sleep time is %d, the average ready time is %d, the average turnaround time is %d\n", sleep_time, ready_time, turnaround_time);
+    printf(1, "The average sleep time is %d, the average ready time is %d, the average turnaround time is %d\n", stime, ready_time, turnaround_time);
     break;
   case 1:
     printf(1, "This is the %d process, the type is CPU \n", pid);

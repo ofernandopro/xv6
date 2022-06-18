@@ -22,20 +22,11 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
-
-// add environment variable PATH
 int set_global_path(char *buffer);
-
-// get history command
 int history(char *buffer, int historyId);
-
-// signal command
 int signal(int, sighandler_t);
-
 int set_prio(int);
-//yield
 int sys_yield(void);
-
 int wait2(int*, int*, int*);
 
 // ulib.c
